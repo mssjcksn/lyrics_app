@@ -20,6 +20,7 @@
 .lyrics-box {
   border: 3px solid #e5e4e2;
   border-radius: 20px;
+  padding: 10px;
   width: 800px;
   height: 600px;
   overflow: auto;
@@ -27,4 +28,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.lyric {
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  width: 750px;
+  height: 2em;
 }
