@@ -1,11 +1,7 @@
 import { Container, TextField } from "@mui/material/";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, Navigate } from "react-router-dom";
 import React, { useState } from "react";
 import SingerPage from "./SingerPage";
-import FirstSinger from "./FirstSinger";
-import SecondSinger from "./SecondSinger";
-import ThirdSinger from "./ThirdSinger";
-import FourthSinger from "./FourthSinger";
 import "./App.css";
 
 function App() {
@@ -85,15 +81,12 @@ function App() {
             </div>
           </Link>
           <Routes>
+            <Route path="/" element={<Navigate to="/singers" />} />
             <Route path="/singers" element={<SingerPage />} />
-            <Route path="/singers/first" element={<FirstSinger />} />
-            <Route path="/singers/second" element={<SecondSinger />} />
-            <Route path="/singers/third" element={<ThirdSinger />} />
-            <Route path="/singers/fourth" element={<FourthSinger />} />
           </Routes>
         </div>
 
-        {singer !== null && (
+        {singer !== -1 && (
           <TextField
             id="outlined-basic"
             variant="outlined"
@@ -130,8 +123,8 @@ function App() {
             <div
               className="lyric"
               style={{
-                margin: "1px",
                 backgroundColor: singer !== null ? singerColors[singer] : "",
+                marginTop: "1px",
               }}
             >
               {input}
